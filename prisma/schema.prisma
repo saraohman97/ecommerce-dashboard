@@ -64,7 +64,7 @@ model Product {
   categoryId String      @db.ObjectId
   category   Category    @relation("CategoryToProduct", fields: [categoryId], references: [id])
   name       String
-  price      String // This was Decimal in mysql
+  price      Float // This was Decimal in mysql
   isFeatured Boolean     @default(false)
   isArchived Boolean     @default(false)
   sizeId     String      @db.ObjectId
