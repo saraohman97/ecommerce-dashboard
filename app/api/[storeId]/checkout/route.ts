@@ -1,8 +1,8 @@
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
 
-import prismadb from "@/lib/prismadb";
 import { stripe } from "@/lib/stripe";
+import prismadb from "@/lib/prismadb";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -42,9 +42,7 @@ export async function POST(
         product_data: {
           name: product.name,
         },
-        unit_amount: Number(product.price * 100)
-        // unit_amount: product.price * 100
-        // unit_amount: product.price.toNumber() * 100
+        unit_amount: Number(product.price) * 100
       }
     });
   });
